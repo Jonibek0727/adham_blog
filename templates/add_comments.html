@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class=" container  " >
+    <div class="cmt padDiv">
+      <form id="comment-form" method="post" action=""  role="form">{% csrf_token %}
+        <div class="row">
+            
+            <div class="col-lg-6">
+              <div class="form-group">
+                {{ form.as_p }}
+                
+                
+              </div>
+            </div>
+            
+            <div class="col-lg-12">
+              <input type="submit" class="btn btn-defeault btn-send" style="border-radius: 8px  ;" value="Send message">
+              <a href="{% url 'home' %}" class="btn btn-pri btn-send"  style="border-radius: 8px  ;">Back</a>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  {% endblock %}
